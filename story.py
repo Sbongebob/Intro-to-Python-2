@@ -11,11 +11,4 @@ print("\nThe map led them to a gaint tree.")
 print("🌲Under the tree, they discovered a shiny roch.")
 print("\n'We found the treasure!' Cheered Bingo.🐶")
 
-adjective1 = input("Enter an adjective:")
-noun1 = input()
-adjective2
-animal = input("Enter an animal:")
-verb2 = input("Enter a verb:")
-exclamation = input("Enter an exclamation (e.g. 'WOW!')")
 
-story + f"""
