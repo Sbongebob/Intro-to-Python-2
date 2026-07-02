@@ -105,3 +105,77 @@ waiting to begin.
 
 print(story)
 
+
+print("=== Carbon / Lifestyle Tracker ===")
+
+showers_per_day = int(input("How many showers per day? "))
+
+meals_per_day = int(input("How many meals cooked per day? "))
+
+stove = input("What kind of stove? (induction/electric/gas): ").lower()
+
+# Transportation
+bus_trips = int(input("Bus trips: "))
+electric_car_miles = float(input("Electric car miles: "))
+gas_car_miles = float(input("Gas car miles: "))
+hybrid_car_miles = float(input("Hybrid car miles: "))
+light_rail_trips = int(input("Light rail trips: "))
+ferry_walk_trips = int(input("Ferry on foot trips: "))
+ferry_car_trips = int(input("Ferry on car trips: "))
+plane_trips = int(input("Plane trips per year: "))
+
+ # home energy
+lights_hours = float(input("Hours per day lights are on: "))
+num_lights = int(input("How many lights? "))
+
+computer_hours = float(input("Hours per day on computer at home: "))
+ac_hours = float(input("Hours per day AC is on at home: "))
+
+# -------------------------
+# 2. CALCULATOR
+# (simple scoring system)
+# -------------------------
+
+score = 0
+
+# Water usage (showers)
+score += showers_per_day * 10
+
+# Meals cooked
+score += meals_per_day * 5
+
+# Stove type impact
+if stove == "gas":
+    score += 30
+elif stove == "electric":
+    score += 20
+else:  # induction
+    score += 10
+
+# Transportation impact
+score += bus_trips * 5
+score += electric_car_miles * 0.2
+score += gas_car_miles * 0.8
+score += hybrid_car_miles * 0.4
+score += light_rail_trips * 3
+score += ferry_walk_trips * 5
+score += ferry_car_trips * 10
+score += plane_trips * 200
+
+# Home energy
+score += lights_hours * num_lights * 2
+score += computer_hours * 3
+score += ac_hours * 5
+
+
+# 3. REPORT
+
+print("\n=== REPORT ===")
+print(f"Total Lifestyle Score: {score:.2f}")
+
+if score < 100:
+    print("Low impact lifestyle 🌱")
+elif score < 300:
+    print("Medium impact lifestyle 🌿")
+else:
+    print("High impact lifestyle 🔥")
