@@ -71,7 +71,7 @@ build_guard_tower()
 collect_logs()
 
 def build_reinforced_wall():
-    for block in range(1, 21):  # 20 wall blocks
+    for block in range(1, 21):  # 20 wall blocks 
         if block % 4 == 0:
             block_type = "COBBLESTONE"
         else:
