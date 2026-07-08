@@ -1,9 +1,9 @@
 print("🐾 **************************** 🐾")
-print("     Welcome to My Digital Pet! 🐶🐱")
+print("  🐶🐱 Welcome to My Digital Pet! 🐉🐸.  ")
 print("🐾 **************************** 🐾")
 
 pet_name = input("🐾 Enter your pet's name: ")
-pet_type = input("🦴 Enter your pet's type (dog 🐶, cat 🐱, dragon 🐉, etc.): ")
+pet_type = input("🦴 Enter your pet's type (dog 🐶, cat 🐱, dragon 🐉, frog 🐸, etc.): ")
 
 hunger = 80
 happiness = 80

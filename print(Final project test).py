@@ -82,7 +82,7 @@ class LozaApp(App):
 
         original = self.input_box.text
 
-        converted = transliterate(original)
+        converted = transliterate(original)9
 
         self.output.text = converted
 
