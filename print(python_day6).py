@@ -144,4 +144,100 @@ print("Minimum number:", min(numbers))
 animals = ("cat", "dog", "rabbit", "hamster")
 print(animals)
 animals_list = list(animals)
-print(animals_list)
+
+student = {
+    "name": "Jordan",
+    "age": 13,
+    "grade": "8th"
+}
+
+person = {
+    "name": "Alice",
+    "age": 30,
+    "skills": ["python", "Data Analysis"]
+}
+
+print(person["name"])
+print(person.get("age"))
+print(person["skills"])
+
+print(person)
+
+person2 = {
+    "name": "Bieti",
+    "age": 15,
+    "skills": ["python", "Data Analysis", "Math"]
+}
+
+print(person2["name"])
+print(person2.get("age"))
+print(person2["skills"])
+
+
+dict_list = [person, person2]
+
+print(dict_list)
+
+# 1. Create a dictionary with three friends' names and birthdays
+friends = {
+    "Alice": "January 5",
+    "Bob": "March 12",
+    "Charlie": "July 20"
+}
+
+print("Friends Dictionary:")
+print(friends)
+
+# Advanced: Ask the user to input names and birthdays
+friends = {}
+
+for i in range(3):
+    name = input(f"\nEnter the name of friend {i + 1}: ")
+    birthday = input(f"Enter {name}'s birthday: ")
+    friends[name] = birthday
+
+print("\nUpdated Friends Dictionary:")
+print(friends)
+
+# 2. Student dictionary
+student = {
+    "name": "Alex",
+    "grade": 8,
+    "school": "Sunrise Middle"
+}
+
+# Print the student's name
+print("\nStudent Name:", student["name"])
+
+# Change the grade to 9
+student["grade"] = 9
+
+# Advanced: Add GPA
+student["GPA"] = 3.8
+
+# Add hobby
+student["hobby"] = "painting"
+
+print("\nUpdated Student Dictionary:")
+print(student)
+
+# Advanced: Remove a key-value pair using pop()
+student.pop("school")
+
+print("\nStudent Dictionary after removing 'school':")
+print(student)
+
+# 3. Person dictionary
+person = {
+    "name": "Ravi",
+    "age": 14,
+    "city": "Seattle"
+}
+
+# Print all keys and values
+print("\nPerson Dictionary:")
+for key, value in person.items():
+    print(key, ":", value)
+
+# Advanced: Format and print a sentence using the values
+print(f"\n{person['name']} is {person['age']} years old and lives in {person['city']}.")
