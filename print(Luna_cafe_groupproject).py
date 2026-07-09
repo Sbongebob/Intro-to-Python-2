@@ -1,3 +1,4 @@
+
 # Price Manager
 # Stores menu items and prices using a dictionary
 
@@ -18,3 +19,23 @@ def get_price(item):
         return prices[item]
     else:
         return None
+
+
+# Customer ordering
+total = 0
+
+while True:
+    order = input("What would you like to order? (type done to finish): ").title()
+
+    if order == "Done":
+        break
+
+    price = get_price(order)
+
+    if price is not None:
+        print(order, "costs $", price)
+        total += price
+    else:
+        print("Sorry, that item is not on the menu.")
+
+print("Your total is: $", total)    
