@@ -1,0 +1,31 @@
+#Exercise 1
+name = "Bieti"
+
+print(name.upper())   # Output: BIETI
+print(name.lower())   # Output: bieti
+
+#Exercise 2
+sentence = "I love math"
+
+new_sentence = sentence.replace("math", "science")
+
+print(new_sentence.title())
+#Exercise 3
+word = "Bieti"
+
+print(word[::-1])
+
+# Write your information to my_info.txt
+with open("my_info.txt", "w") as file:
+    file.write("Name: Bieti\n")
+    file.write("Favorite food: Noodles\n")
+
+# Read and print the contents of my_info.txt
+with open("my_info.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Add favorite color using append mode
+with open("my_info.txt", "a") as file:
+    file.write("Favorite color: Dark green\n")
+

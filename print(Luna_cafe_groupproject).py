@@ -1,14 +1,13 @@
-
 # Price Manager
 # Stores menu items and prices using a dictionary
 
 prices = {
     "Croissant": 3.50,
     "Latte": 5.00,
-    "Black coffee": 3.00,
+    "Black Coffee": 3.00,
     "Espresso": 3.00,
     "Muffins": 3.50,
-    "Avocado toast": 8.50,
+    "Avocado Toast": 8.50,
     "Matcha": 5.50,
     "Cappuccino": 5.00,
 }
@@ -38,4 +37,7 @@ while True:
     else:
         print("Sorry, that item is not on the menu.")
 
-print("Your total is: $", total)    
+print("-------------------")
+print("Your total is: $", total)
+print("Thank you for visiting Python Café!")
+
