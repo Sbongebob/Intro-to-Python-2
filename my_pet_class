@@ -1,0 +1,170 @@
+class Pet:
+    PET_EMOJIS = {
+        "dog": "🐶",
+        "cat": "🐱",
+        "dragon": "🐉",
+        "frog": "🐸",
+        "rabbit": "🐰",
+        "hamster": "🐹",
+        "bird": "🐦",
+        "penguin": "🐧",
+        "fox": "🦊",
+        "bear": "🐻",
+        "panda": "🐼",
+        "lion": "🦁",
+        "tiger": "🐯",
+        "cow": "🐮",
+        "pig": "🐷",
+        "monkey": "🐵",
+        "unicorn": "🦄",
+        "dinosaur": "🦖",
+        "octopus": "🐙",
+        "fish": "🐠"
+    }
+
+    def __init__(self, name, pet_type):
+        self.name = name
+        self.pet_type = pet_type.lower()
+        self.emoji = self.PET_EMOJIS.get(self.pet_type, "🐾")
+
+        self.hunger = 80
+        self.happiness = 80
+        self.energy = 80
+        self.health = 100
+        self.cleanliness = 80
+        self.level = 1
+
+    def show_stats(self):
+        print("\n📊========== PET STATS ==========")
+        print(f"{self.emoji} Name: {self.name}")
+        print(f"🐾 Type: {self.pet_type.title()}")
+        print(f"⭐ Level: {self.level}")
+        print(f"🍖 Hunger: {self.hunger}")
+        print(f"😊 Happiness: {self.happiness}")
+        print(f"⚡ Energy: {self.energy}")
+        print(f"❤️ Health: {self.health}")
+        print(f"🛁 Cleanliness: {self.cleanliness}")
+        print("================================")
+
+    def feed(self):
+        self.hunger = min(100, self.hunger + 20)
+        self.health = min(100, self.health + 5)
+        self.cleanliness = max(0, self.cleanliness - 10)
+        print(f"🍖 {self.emoji} {self.name} enjoyed the delicious food!")
+
+    def play(self):
+        self.happiness = min(100, self.happiness + 20)
+        self.energy = max(0, self.energy - 15)
+        self.hunger = max(0, self.hunger - 10)
+        self.cleanliness = max(0, self.cleanliness - 10)
+        print(f"🎾 {self.emoji} {self.name} had lots of fun!")
+
+    def sleep(self):
+        self.energy = min(100, self.energy + 30)
+        self.hunger = max(0, self.hunger - 10)
+        print(f"😴 {self.emoji} {self.name} slept peacefully.")
+
+    def clean(self):
+        self.cleanliness = 100
+        self.happiness = min(100, self.happiness + 5)
+        print(f"🛁 {self.emoji} {self.name} is sparkling clean!")
+
+    def visit_vet(self):
+        self.health = min(100, self.health + 20)
+        self.happiness = max(0, self.happiness - 5)
+        print(f"🏥 {self.emoji} {self.name} feels much healthier!")
+
+    def time_passes(self):
+        self.hunger = max(0, self.hunger - 5)
+        self.happiness = max(0, self.happiness - 3)
+        self.energy = max(0, self.energy - 4)
+        self.cleanliness = max(0, self.cleanliness - 2)
+
+        if self.cleanliness < 20:
+            self.happiness = max(0, self.happiness - 5)
+            print(f"😖 {self.name} feels dirty!")
+
+        if self.hunger == 0:
+            self.health = max(0, self.health - 10)
+            print(f"🍽️ {self.name} is starving!")
+
+        if self.happiness == 0:
+            self.health = max(0, self.health - 5)
+            print(f"💔 {self.name} is very sad!")
+
+        if self.energy == 0:
+            print(f"😴 {self.name} fell asleep from exhaustion!")
+            self.energy = 30
+
+        if (self.hunger > 80 and
+            self.happiness > 80 and
+            self.energy > 80 and
+            self.health > 80 and
+            self.cleanliness > 80):
+
+            self.level += 1
+            print(f"🎉⭐ Congratulations! {self.name} reached Level {self.level}!")
+
+# ---------------- MAIN PROGRAM ----------------
+
+print("🐾**************************************🐾")
+print("🐶🐱🐰🦊🐻 Welcome to Digital Pet! 🐧🐼🐉🐸🦄")
+print("🐾**************************************🐾")
+
+print("\nAvailable Pets:")
+for animal, emoji in Pet.PET_EMOJIS.items():
+    print(f"{emoji} {animal.title()}")
+
+name = input("\n🐾 Enter your pet's name: ")
+pet_type = input("Choose your pet type: ")
+
+pet = Pet(name, pet_type)
+
+print(f"\n🎉 Welcome {pet.emoji} {pet.name}!")
+
+while pet.health > 0:
+
+    pet.show_stats()
+
+    print("""
+======== 🐾 MENU 🐾 ========
+
+1. 🍖 Feed
+2. 🎾 Play
+3. 😴 Sleep
+4. 🛁 Clean
+5. 🏥 Visit Vet
+6. 🚪 Quit
+
+============================
+""")
+
+    choice = input("Choose (1-6): ")
+
+    if choice == "1":
+        pet.feed()
+
+    elif choice == "2":
+        pet.play()
+
+    elif choice == "3":
+        pet.sleep()
+
+    elif choice == "4":
+        pet.clean()
+
+    elif choice == "5":
+        pet.visit_vet()
+
+    elif choice == "6":
+        print(f"👋 Goodbye! {pet.emoji} {pet.name} will miss you!")
+        break
+
+    else:
+        print("❌ Invalid choice!")
+        continue
+
+    pet.time_passes()
+
+if pet.health == 0:
+    print(f"\n💀 Game Over! {pet.emoji} {pet.name} couldn't survive.")
