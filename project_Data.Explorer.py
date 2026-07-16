@@ -25,9 +25,7 @@ print("Countries:", countries)
 print("Titles:", titles)
 print("Average Number of Titles:", average_titles)
 
-# -------------------------
 # PIE CHART
-# -------------------------
 plt.figure(figsize=(8, 6))
 
 plt.pie(
@@ -40,9 +38,7 @@ plt.title("FIFA World Cup Titles by Country (Pie Chart)")
 
 plt.show()
 
-# -------------------------
 # LINE GRAPH
-# -------------------------
 plt.figure(figsize=(8, 6))
 
 plt.plot(countries, titles, marker='o')
