@@ -169,9 +169,7 @@ class Admin:
 
             print()
 
-    # ----------------------------
     # Main Menu
-    # ----------------------------
     def menu(self):
         while True:
             print("\n===== Library Management System =====")
@@ -214,6 +212,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

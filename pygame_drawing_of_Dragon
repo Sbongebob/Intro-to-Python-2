@@ -1,0 +1,124 @@
+#Teacher dino drawing
+import pygame
+running = True
+
+screen_width = 640
+screen_height = 480
+running = True
+#create display window
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("My First Pygame Window")
+
+pygame.draw.rect(screen, (0,255,0), (20, 80, 120, 40))
+pygame.draw.rect(screen, (0,255,0), (150, 80, 40,200))
+pygame.draw.rect(screen, (0,255,0), (200, 80, 40, 100))
+pygame.draw.rect(screen, (0,255,0), (250, 80, 40, 200))
+pygame.draw.rect(screen, (0,255,0), (300, 70, 40, 50))
+pygame.draw.rect(screen, (0,255,0), (350, 60, 40, 80))
+pygame.draw.rect(screen, (0,255,0), (390, 90, 40, 40))
+pygame.draw.rect(screen, (0,255,0), (390, 80, 40, 60))
+pygame.draw.rect(screen, (0,255,0), (390, 80, 40, 60))
+pygame.draw.rect(screen, (0,255,0), (390, 80, 40, 60))
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.flip()
+
+
+
+
+
+#My dino drawing
+
+import pygame 
+
+ 
+
+# Initialize Pygame 
+
+pygame.init() 
+
+ 
+
+# Screen setup 
+
+WIDTH, HEIGHT = 800, 500 
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT)) 
+
+pygame.display.set_caption("Rectangle Dragon") 
+
+ 
+
+# Colors 
+
+BROWN = (70, 50, 40) 
+
+GREEN = (170, 200, 90) 
+
+ 
+
+running = True 
+
+ 
+
+while running: 
+
+    for event in pygame.event.get(): 
+
+        if event.type == pygame.QUIT: 
+
+            running = False 
+
+ 
+
+    # Background 
+
+    screen.fill(BROWN) 
+
+ 
+
+    # Tail 
+
+    pygame.draw.rect(screen, GREEN, (120, 180, 120, 40)) 
+
+ 
+
+    # Legs 
+
+    pygame.draw.rect(screen, GREEN, (260, 180, 50, 190)) 
+
+    pygame.draw.rect(screen, GREEN, (350, 180, 50, 130)) 
+
+    pygame.draw.rect(screen, GREEN, (440, 180, 50, 190)) 
+
+ 
+
+    # Neck 
+
+    pygame.draw.rect(screen, GREEN, (510, 160, 50, 110)) 
+
+ 
+
+    # Head 
+
+    pygame.draw.rect(screen, GREEN, (580, 140, 130, 70)) 
+
+ 
+
+    # Eyes 
+
+    pygame.draw.rect(screen, BROWN, (600, 150, 12, 12)) 
+
+    pygame.draw.rect(screen, BROWN, (635, 150, 12, 12)) 
+
+ 
+
+    pygame.display.flip() 
+
+ 
+
+pygame.quit() 
