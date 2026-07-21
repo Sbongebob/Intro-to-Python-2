@@ -64,8 +64,9 @@ geez_to_english = {
 
     # ፐ
     "ፐ":"pe", "ፑ":"pu", "ፒ":"pi", "ፓ":"pa", "ፔ":"pe", "ፕ":"p", "ፖ":"po"
-}
 
+
+}
 
 def convert_word():
     text = input_box.get("1.0", tk.END).strip()
